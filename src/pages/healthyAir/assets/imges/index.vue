@@ -35,10 +35,10 @@
                 </div>
             </div>
         </div>
-        <LanguageOutput  :class="modal_languageOutput_class ? 'modal_languageOutput' : ''" :output_text='output_text' ></LanguageOutput>
-        <Modal  :show="if_show_mask" :title="modal_title" @hideModal="hideModal">
+        <LanguageOutput :output_text='output_text'></LanguageOutput>
+        <Modal :show="if_show_mask" :title="modal_title" @hideModal="hideModal">
             <div class="modal_main">
-                <ProductCard v-for="(item,index) in modal_product_list" :name="item.name" :img_url="item.img_url" :product_img="item.product_img" :key="index"></ProductCard>
+                <ProductCard v-for="(item,index) in modal_product_list" :name="item.name" :img_url="item.img_url" :key="index"></ProductCard>
             </div>
         </Modal>
   </div>
@@ -70,7 +70,6 @@ export default {
       output_text: "健康空气：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
       if_show_mask:false,
       modal_title:'森林深呼吸',
-      modal_languageOutput_class:false,
     product_list:[
         {
             name:'空调',
@@ -224,21 +223,7 @@ export default {
         }
     ],
     modal_product_list:[
-        {
-            name:'空气净化器',
-            img_url:require('./assets/imges/边框1.png'),
-            product_img:require('./assets/imges/空气净化器.png')
-        },
-        {
-            name:'加湿器',
-            img_url:require('./assets/imges/边框1.png'),
-            product_img:require('./assets/imges/加湿器2.png')
-        },
-         {
-            name:'空调',
-            img_url:require('./assets/imges/边框1.png'),
-            product_img:require('./assets/imges/空调2.png')
-        }
+        
     ]
     };
   },
@@ -247,13 +232,11 @@ export default {
       //弹出遮罩
       showModal(){
         this.if_show_mask=true 
-        this.modal_languageOutput_class=true
       },
       //关闭遮罩
       hideModal(e){
-        //   console.log(1)
+          console.log(1)
           this.if_show_mask=false
-          this.modal_languageOutput_class=false
       }
   }
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -264,7 +247,6 @@ export default {
     height: 100%;
     background-image: url(./assets/imges/背景.jpg);
     overflow: hidden;
-    position: relative;
     .body{
             width: 1680px;
             height: 766px;
@@ -563,34 +545,8 @@ export default {
     .languageOutput{
         margin-top: 36px;
     }
-    .modal_languageOutput{
-        position: fixed;
-        bottom: 20px;
-        left: 150px;
-        z-index: 20;
-    }
     .modal_main{
-        >>>.product_card{
-            padding: 31px 0px;
-            box-sizing: border-box;
-            width: 260px;
-            height: 340px;
-            background-image: url(./assets/imges/边框1.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            float: left;
-            margin-left: 20px;
-            &:nth-child(1){
-                margin-left: 0px;
-            }
-            .text{
-                margin-top: 0px;
-               font-size:24px;
-                font-weight:400;
-                color:rgba(255,255,255,1);
-                line-height:33px;
-            }
-        }
+
     }
 }
 </style>

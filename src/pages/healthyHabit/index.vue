@@ -10,7 +10,7 @@
             </div>
             <div class="params_list">
                 <div class="speech_box">
-                    <SpeechCard v-for="(item,index) in speechCard_list" :title="item.title" :simulate="item.simulate" :content='item.content' :key="index"></SpeechCard>
+                    <SpeechCard  @showModal="showModal" v-for="(item,index) in speechCard_list" :title="item.title" :simulate="item.simulate" :content='item.content' :key="index"></SpeechCard>
                 </div>
                 <div class="params_box">
                     <SmallCard v-for="(item,index) in params_liset" :title="item.title" :params="item.params" :img_url="item.img_url" :key="index"></SmallCard>
@@ -35,7 +35,12 @@
                 </div>
             </div>
         </div>
-        <LanguageOutput :output_text='output_text'></LanguageOutput>
+        <LanguageOutput :class="modal_languageOutput_class ? 'modal_languageOutput' : ''" :output_text='output_text'></LanguageOutput>
+        <Modal  :show="if_show_mask" :title="modal_title" @hideModal="hideModal">
+            <div class="modal_main">
+                <ProductCard v-for="(item,index) in modal_product_list" :name="item.name" :img_url="item.img_url" :product_img="item.product_img" :key="index"></ProductCard>
+            </div>
+        </Modal>
   </div>
 </template>
 
@@ -46,6 +51,7 @@ import SpeechCard from '../../components/cards/speechCard'
 import DetailCard from "../../components/cards/detailCard";
 import ProductCard from '../../components/cards/productCard';
 import LanguageOutput from "../../components/languageOutput";
+import Modal from "../../components/modal";
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -55,12 +61,16 @@ export default {
     SpeechCard,
     DetailCard,
     LanguageOutput,
-    ProductCard
+    ProductCard,
+    Modal
   },
   data() {
     return {
       title: "健康习惯",
       output_text: "健康习惯：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
+      if_show_mask:false,
+      modal_title:'自动睡眠',
+      modal_languageOutput_class:false,
       product_list:[
         {
             name:'灯',
@@ -225,11 +235,34 @@ export default {
         able_item:['地理位置','天气数据','日常体征数据','用户行为记录'],
         img_url:require('./assets/imges/大数据.png')
         }
+    ],
+    modal_product_list:[
+        {
+            name:'智能吸顶灯',
+            img_url:require('./assets/imges/边框1.png'),
+            product_img:require('./assets/imges/智能吸顶灯.png')
+        },
+        {
+            name:'小美音箱',
+            img_url:require('./assets/imges/边框1.png'),
+            product_img:require('./assets/imges/小美音箱.png')
+        }
     ]   
     };
   },
-  //方法集合
-  methods: {}
+  methods: {
+      //弹出遮罩
+      showModal(){
+        this.if_show_mask=true 
+        this.modal_languageOutput_class=true
+      },
+      //关闭遮罩
+      hideModal(e){
+        //   console.log(1)
+          this.if_show_mask=false
+          this.modal_languageOutput_class=false
+      }
+  }
   //生命周期 - 创建完成（可以访问当前this实例）
 };
 </script>
@@ -532,6 +565,38 @@ export default {
     }
     .languageOutput{
         margin-top: 36px;
+    }
+    .modal_languageOutput{
+        position: fixed;
+        bottom: 20px;
+        left: 150px;
+        z-index: 20;
+    }
+    .modal_main{
+       overflow: hidden;
+       display: flex;
+       justify-content: center;
+        >>>.product_card{
+            padding: 31px 0px;
+            box-sizing: border-box;
+            width: 260px;
+            height: 340px;
+            background-image: url(./assets/imges/边框1.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            float: left;
+            margin-left: 40px;
+            &:nth-child(1){
+                margin-left: 0px;
+            }
+            .text{
+                margin-top: 0px;
+               font-size:24px;
+                font-weight:400;
+                color:rgba(255,255,255,1);
+                line-height:33px;
+            }
+        }
     }
 }
 </style>

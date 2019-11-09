@@ -29,6 +29,7 @@ export default {
   data() {
     return {
         title:'健康的家',
+        output_text: "健康的家：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
         small_cards:[
             {
                 title:'温度',
@@ -92,7 +93,6 @@ export default {
              router_url:'healthyHabit'
             }
         ],
-        output_text: "健康的家：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx"
 
     };
   },

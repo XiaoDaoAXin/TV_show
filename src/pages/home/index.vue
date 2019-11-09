@@ -35,7 +35,7 @@ export default {
         },
         {
           name: "personalityHome",
-          text: "安全的家"
+          text: "个性的家"
         },
         {
           name: "robotButler",

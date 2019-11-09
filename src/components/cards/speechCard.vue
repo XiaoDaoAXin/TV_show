@@ -1,5 +1,5 @@
 <template>
-  <div class='speech_Card'>
+  <div class='speech_Card' @click="showModal($event)">
      <div class="img">{{simulate}}</div>
      <div class="text">
          <p>{{title}}</p>
@@ -18,7 +18,10 @@ export default {
     }
   },
   methods:{
-
+    showModal(e) {
+        console.log(e)
+        this.$emit('showModal')
+    },
   }
 }
 </script>
