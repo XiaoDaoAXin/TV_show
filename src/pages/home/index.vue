@@ -34,7 +34,7 @@ export default {
           text: "健康的家"
         },
         {
-          name: "personalityHome",
+          name: "identityHome",
           text: "个性的家"
         },
         {

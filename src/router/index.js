@@ -7,7 +7,9 @@ const HealthyHome = () => import('../pages/healthyHome')
 const HealthyWater = () => import('../pages/healthyWater')
 const HealthyAir = () => import('../pages/healthyAir')
 const HealthyHabit = () => import('../pages/healthyHabit')
-const HealthyEat = () => import('../pages/healthyEat')
+const HealthyEat = () => import('../pages/healthyEat') 
+const IdentityHome = () => import('../pages/identityHome') 
+const Cutebaby = () => import('../pages/identityHome/cute_baby') 
 
 Vue.use(Router)
 
@@ -51,6 +53,16 @@ export default new Router({
       path: '/healthyEat',
       name: 'healthyEat',
       component: HealthyEat
+    },
+    {
+      path: '/identityHome',
+      name: 'identityHome',
+      component: IdentityHome
+    },
+    {
+      path: '/cutebaby',
+      name: 'cutebaby',
+      component: Cutebaby
     }
   ]
 })
