@@ -10,6 +10,7 @@ const HealthyHabit = () => import('../pages/healthyHabit')
 const HealthyEat = () => import('../pages/healthyEat') 
 const IdentityHome = () => import('../pages/identityHome') 
 const Cutebaby = () => import('../pages/identityHome/cute_baby') 
+const Oldman = () => import('../pages/identityHome/old_man') 
 
 Vue.use(Router)
 
@@ -62,7 +63,12 @@ export default new Router({
     {
       path: '/cutebaby',
       name: 'cutebaby',
-      component: Cutebaby
+      component: Cutebaby  
+    },
+    {
+      path: '/oldman',
+      name: 'oldman',
+      component: Oldman
     }
   ]
 })

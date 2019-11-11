@@ -1,21 +1,23 @@
 <template>
-  <div id="home">
-    <h1>蓝图动态导示系统</h1>
-    <div class="tabbar">
-      <div
-        class="item_btn"
-        v-for="(item,index) in tabbar"
-        :key="item.name"
-        @click="go(item.name)"
-      >
-        <div class="middle_circle">
-          <div class="small_circle">{{item.text}}</div>
+  <div class="screen">
+    <div id="home">
+      <h1>蓝图动态导示系统</h1>
+      <div class="tabbar">
+        <div
+          class="item_btn"
+          v-for="(item,index) in tabbar"
+          :key="item.name"
+          @click="go(item.name)"
+        >
+          <div class="middle_circle">
+            <div class="small_circle">{{item.text}}</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="languageOutput">
-      <div class="img"></div>
-      <div class="output_text">{{output_text}}</div>
+      <div class="languageOutput">
+        <div class="img"></div>
+        <div class="output_text">{{output_text}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,10 +58,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.screen{
+        height: 100%;
+        background-image: url(./assets/img/矩形.jpg);
+        // background-position: center center;
+        // background-repeat: no-repeat; 
+        background-size: cover; 
+    }
 #home {
   height: 100%;
+  width: 1720px;
+  margin: 0px auto;
   overflow: hidden;
-  background-image: url(./assets/img/矩形.jpg);
   h1 {
     height: 70px;
     font-size: 50px;
@@ -75,15 +85,15 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     .item_btn {
       height: 100%;
       width: 401px;
       border-radius: 50%;
-      margin-left: 39px;
       background-image: url(./assets/img/圆形边框2.png);
       background-position: center center;
       background-repeat: no-repeat;
+      background-size: cover;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -92,6 +102,7 @@ export default {
         width: 400px;
         height: 400px;
         background-image: url(./assets/img/圆形边框1.png);
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         display: flex;
@@ -109,6 +120,7 @@ export default {
           background-image: url(./assets/img/圆形背景.png);
           background-position: center center;
           background-repeat: no-repeat;
+          background-size: cover;
         }
       }
     }
@@ -117,7 +129,7 @@ export default {
     margin: 0 auto;
     margin-top: 247px;
     width: 1612px;
-    height: 132px;
+    height: 134px;
     .img {
       float: left;
       width: 134px;
@@ -125,14 +137,16 @@ export default {
       background-image: url(./assets/img/对话头像.png);
       background-position: center center;
       background-repeat: no-repeat;
+      background-size: cover;
     }
     .output_text {
       float: left;
       width: 1463px;
-      height: 105px;
+      height: 107px;
       background-image: url(./assets/img/对话框.png);
       background-position: center center;
       background-repeat: no-repeat;
+      background-size: cover;
       margin-top: 12px;
       margin-left: 10px;
       font-size: 42px;

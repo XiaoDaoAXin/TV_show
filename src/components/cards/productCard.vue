@@ -26,12 +26,14 @@ export default {
         height: 290px;
         background-repeat: no-repeat;
         background-position: center center;
+        background-size: contain;
         overflow: hidden;
         .product_img{
             width: 100%;
             height: 250px;
             background-position: center center;
             background-repeat: no-repeat;
+            //  background-size: cover;
         }
         .text{
             font-size:16px;

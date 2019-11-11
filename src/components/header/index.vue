@@ -28,7 +28,7 @@ export default {
   
 <style scoped lang="scss">
  .header{
-     width: 1800px;
+    //  width: 1800px;
      height: 70px;
      margin: 0 auto;
      margin-top:60px;
@@ -40,19 +40,22 @@ export default {
     color:rgba(255,255,255,1);
     .return{
         float: left;
-        width: 50px;
-        height: 70px;
+        width: 26px;
+        height: 46px;
+        margin-right:30px;
         background-image: url(./assets/返回.png);
         background-repeat: no-repeat;
         background-position: center center;
+        background-size: cover;
     }
     .to_home{
         float: right;
-        width: 60px;
-        height: 70px;
+        width: 56px;
+        height: 54px;
         background-image: url(./assets/首页.png);
         background-repeat: no-repeat;
         background-position: center center;
+        background-size: cover;
     }
  }
 </style>

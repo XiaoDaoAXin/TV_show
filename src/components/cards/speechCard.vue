@@ -40,6 +40,7 @@ export default {
         background-image: url(./assets/语音.png);
         background-repeat: no-repeat;
         background-position: center center;
+        //  background-size: cover;
     }
     .text{
         padding: 13px 0px 0px 0px;

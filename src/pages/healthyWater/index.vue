@@ -1,41 +1,47 @@
 <!--  -->
 <template>
-    <div class='healthyWater'>
-         <Header :title="title"></Header>
-         <div class="body">
-             <div class="product_list">
-                 <h3>产品</h3>
-                 <div class="product_item">
-                     <ProductCard v-for="(item,index) in product_list" :name="item.name" :img_url="item.img_url" :key="index"></ProductCard>
-                 </div>
-             </div>
-             <div class="params_list">
-                 <div class="speech_box">
-                     <SpeechCard v-for="(item,index) in speechCard_list" :title="item.title" :content='item.content' :key="index"></SpeechCard>
-                 </div>
-                 <div class="params_box">
-                     <SmallCard v-for="(item,index) in params_liset" :title="item.title" :params="item.params" :img_url="item.img_url" :key="index"></SmallCard>
-                 </div>
-                 <h2>健康的家</h2>
-             </div>
-              <div class="right_box">
-                     <div class="service">
-                         <h3>内容服务</h3>
-                         <SmallCard v-for="(item,index) in service_liset" :title="item.title"  :img_url="item.img_url" :key="index"></SmallCard>
-                     </div>
-                     <div class="AI">
-                         <h3>AI系统</h3>
-                         <SmallCard v-for="(item,index) in AI_list" :title="item.title" :img_url="item.img_url" :key="index">
-                            <div slot="able_item">
-                               <div class="able_list">
-                                    <P v-for="(item,index) in item.able_item" :key="index">{{item}}</P>
-                               </div>
+    <div class="screen">
+        <div class='healthyWater'>
+            <Header :title="title"></Header>
+            <div class="body">
+                <div class="product_list">
+                    <h3>产品</h3>
+                    <div class="product_item">
+                        <ProductCard v-for="(item,index) in product_list" :name="item.name" :img_url="item.img_url" :key="index"></ProductCard>
+                    </div>
+                </div>
+                <div class="params_list">
+                    <div class="speech_box">
+                        <SpeechCard v-for="(item,index) in speechCard_list" :title="item.title" :content='item.content' :key="index"></SpeechCard>
+                    </div>
+                    <div class="params_box">
+                        <SmallCard v-for="(item,index) in params_liset" :title="item.title" :params="item.params" :img_url="item.img_url" :key="index"></SmallCard>
+                    </div>
+                    <h2>健康的家</h2>
+                </div>
+                <div class="right_box">
+                        <div class="service">
+                            <h3>内容服务</h3>
+                            <div class="service_item">
+                                <SmallCard v-for="(item,index) in service_liset" :title="item.title"  :img_url="item.img_url" :key="index"></SmallCard>
                             </div>
-                         </SmallCard>
-                     </div>
-              </div>
-         </div>
-         <LanguageOutput :output_text='output_text'></LanguageOutput>
+                        </div>
+                        <div class="AI">
+                            <h3>AI系统</h3>
+                            <div class="AI_item">
+                                <SmallCard v-for="(item,index) in AI_list" :title="item.title" :img_url="item.img_url" :key="index">
+                                    <div slot="able_item">
+                                    <div class="able_list">
+                                            <P v-for="(item,index) in item.able_item" :key="index">{{item}}</P>
+                                    </div>
+                                    </div>
+                                </SmallCard>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <LanguageOutput :output_text='output_text'></LanguageOutput>
+        </div>
     </div>
 </template>
 
@@ -213,10 +219,16 @@ methods: {
 }
 </script>
 <style lang='scss' scoped>
+    .screen{
+    height: 100%;
+    background-image: url(./assets/imges/背景.jpg);
+    background-size: cover;
+    }
     .healthyWater{
         height: 100%;
+        width: 1790px;
+        margin: 0px auto;
         overflow: hidden;
-        background-image: url(./assets/imges/背景.jpg);
         .body{
             width: 1680px;
             height: 766px;
@@ -225,10 +237,11 @@ methods: {
             box-sizing: border-box;
             .product_list{
                 float: left;
-                width: 463px;
-                height: 700px;
-                margin-top: 66px;
+                width: 492px;
+                height: 742px;
+                margin-top: 36px;
                 background-image: url(./assets/imges/产品-边框.png);
+                background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center center;
                 h3{
@@ -256,7 +269,7 @@ methods: {
             }
             .params_list{
                 float: left;
-                width: 760px;
+                width:695px;
                 height: 700px;
                 .speech_box{
                     width: 100%;
@@ -266,15 +279,15 @@ methods: {
                     .speech_Card{
                         position: absolute;
                         &:nth-child(1){
-                            left: 112px;
+                            left: 117px;
                             top: 142px;
                         }
                          &:nth-child(2){
-                            left: 290px;
+                            left: 265px;
                             top: 51px;
                         }
                         &:nth-child(3){
-                            right: 95px;
+                            right: 75px;
                             top: 115px;
                         }
                     }
@@ -283,7 +296,7 @@ methods: {
                     width: 100%;
                     height: 460px;
                     //  border: 1px solid red;
-                     padding: 0px 40px 0px 40px;
+                     padding: 0px 20px 0px 20px;
                      box-sizing: border-box;
                      >>>.samll_card{
                          float: left;
@@ -294,16 +307,20 @@ methods: {
                          background-image: url(./assets/imges/方块背景.png);
                          background-repeat: no-repeat;
                          background-position: center center;
+                        //  background-size: cover;
                          margin-bottom: 32px;
                          &:nth-child(2n){
-                             margin-left: 310px;
+                             margin-left: 285px;
                          }
                          .img{
-                             width: 70px;
-                             height: 65px;
+                             width: 50px;
+                             height: 50px;
+                             margin-left: 10px;
+                             margin-top: 7px;
+                             background-size: contain;
                          }
                          .text{
-                             margin:0px;
+                             margin-left: 10px;
                              width: 113px;
                              height: 65px;
                              font-size:18px;
@@ -328,19 +345,21 @@ methods: {
             }
              .right_box{
                float: left;
-                width: 455px;
+                width: 492px;
                 height: 766px;
                 // border: 1px solid red;
                 .service{
-                    padding: 0px 0px 0px 22px;
+                    width: 492px;
+                    height: 382px;
                     box-sizing: border-box;
-                    width: 460px;
-                    height: 340px;
                     background-image: url(./assets/imges/内容服务-边框.png);
                     background-repeat: no-repeat;
                     background-position: center center;
-                    margin-top: 66px;
-                    h3{
+                    background-size: 100%;
+                    margin-top: 30px;
+                    overflow: hidden;
+                    h3{ 
+                        margin-top:20px;
                         height: 93px;
                         font-size:24px;
                         font-weight:400;
@@ -348,42 +367,48 @@ methods: {
                         line-height:93px;
                         text-align: center;
                    }
-                   //更改组件样式
-                   >>>.samll_card{
-                       padding: 0px;
-                       margin-bottom: 20px;
-                       width: 218px;
-                       height: 42px;
-                       background-image: none;
-                       .img{
-                           width: 42px;
-                           height: 42px;
-                           background-repeat: no-repeat;
-                           background-position: center center;
-                       }
-                       .text{
-                           height: 42px;
-                           margin-left: 15px;
-                           font-size:18px;
-                            font-weight:400;
-                            color:rgba(255,255,255,1);
-                            line-height:25px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            p{
-                                width: 130px;
+                   .service_item{
+                        //更改组件样式
+                        height: 287px;
+                        padding: 0px 0px 0px 52px;
+                        >>>.samll_card{
+                            padding: 0px;
+                            margin-bottom: 20px;
+                            width: 218px;
+                            height: 42px;
+                            background-image: none;
+                            .img{
+                                width: 42px;
+                                height: 42px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: contain;
                             }
-                       }
+                            .text{
+                                height: 42px;
+                                margin-left: 15px;
+                                font-size:18px;
+                                    font-weight:400;
+                                    color:rgba(255,255,255,1);
+                                    line-height:25px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    p{
+                                        width: 130px;
+                                    }
+                            }
+                        }
                    }
                 }
                 .AI{
-                    width: 460px;
-                    height: 340px;
+                    // width: 460px;
+                    height: 344px;
                     background-image: url(./assets/imges/内容服务-边框.png);
                     background-repeat: no-repeat;
                     background-position: center center;
-                    margin-top: 36px;
+                    background-size: cover;
+                    margin-top: 16px;
                      h3{
                         height: 93px;
                         font-size:24px;
@@ -392,33 +417,46 @@ methods: {
                         line-height:93px;
                         text-align: center;
                     }
-                    >>>.samll_card{
-                        padding: 0px;
-                        width: 153px;
-                        height: 210px;
-                        background-image:none;
-                        .img{
-                            width: 100%;
-                            height: 40px;
-                            background-repeat: no-repeat;
-                            background-position: center center;
-                        }
-                        .text{
-                            width: 100%;
-                            height: 170px;
-                            margin: 0px;
-                            >p{
-                                &:nth-child(1){
-                                    width: 100%;
-                                    height: 46px;
-                                    font-size:18px;
-                                    font-weight:400;
-                                    color:rgba(255,255,255,1);
-                                    line-height:46px;
-                                    text-align: center;
+                    .AI_item{
+                        padding-left: 20px;
+                        >>>.samll_card{
+                            padding: 0px;
+                            width: 153px;
+                            height: 210px;
+                            background-image:none;
+                            .img{
+                                width: 100%;
+                                height: 40px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: contain;
+                            }
+                            .text{
+                                width: 100%;
+                                height: 170px;
+                                margin: 0px;
+                                >p{
+                                    &:nth-child(1){
+                                        width: 100%;
+                                        height: 46px;
+                                        font-size:18px;
+                                        font-weight:400;
+                                        color:rgba(255,255,255,1);
+                                        line-height:46px;
+                                        text-align: center;
+                                    }
+                                    &:nth-child(2){
+                                        width: 109px;
+                                        margin: 0px auto;
+                                        font-size:14px;
+                                        font-weight:400;
+                                        color:rgba(255,255,255,1);
+                                        line-height:20px;
+                                        text-align: center;
+                                    }
                                 }
-                                &:nth-child(2){
-                                    width: 109px;
+                                .able_list{
+                                    width: 115px;
                                     margin: 0px auto;
                                     font-size:14px;
                                     font-weight:400;
@@ -427,22 +465,18 @@ methods: {
                                     text-align: center;
                                 }
                             }
-                            .able_list{
-                                width: 115px;
-                                margin: 0px auto;
-                                font-size:14px;
-                                font-weight:400;
-                                color:rgba(255,255,255,1);
-                                line-height:20px;
-                                text-align: center;
-                            }
                         }
                     }
+
                 }
             }
         }
-        .languageOutput{
+        >>>.languageOutput{
+            width: 1710px;
             margin-top: 35px;
+            .output_text{
+                width: 1520px;
+            }
         }
     }
 

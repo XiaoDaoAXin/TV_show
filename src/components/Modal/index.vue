@@ -55,8 +55,8 @@ export default {
     z-index: 10;
 }
 .modal-container {
-    width: 885px;
-    height: 525px;
+    width: 940px;
+    height: 590px;
     box-sizing: border-box;
     padding: 30px 30px 45px 30px;
     border-radius: 10px;
@@ -68,14 +68,16 @@ export default {
     background-image: url(./assets/imges/边框2.png);
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
     // position: relative;
     .close{
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 30px;
-        right: 30px;
+        top: 60px;
+        right: 50px;
         background-image: url(./assets/imges/关闭.png);
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -87,6 +89,7 @@ export default {
     line-height:70px;
     color: #fff;
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 30px;
     cursor: move;
 }

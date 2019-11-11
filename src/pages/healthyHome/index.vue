@@ -1,17 +1,19 @@
 <template>
-  <div id="healthyHome">
-    <Header :title="title"></Header>
-    <div class="healthy_home_able">
-        <SmallCard v-for="(item,index) in small_cards" :title="item.title" :params="item.params" :img_url="item.img_url" :key="index"></SmallCard>
+    <div class="screen">
+        <div id="healthyHome">
+            <Header :title="title"></Header>
+            <div class="healthy_home_able">
+                <SmallCard v-for="(item,index) in small_cards" :title="item.title" :params="item.params" :img_url="item.img_url" :key="index"></SmallCard>
+            </div>
+            <h2>健康服务</h2>
+            <div class="healthy_service_able">
+                <DetailCard v-for="(item,index) in detailCards" :title="item.title" :img_url="item.img_url" :router_url="item.router_url" :key="item.title" >
+                    <p v-for="(item,index) in item.able" :key="index">{{item}}</p>
+                </DetailCard>
+            </div>
+            <LanguageOutput :output_text='output_text'></LanguageOutput>
+        </div>
     </div>
-    <h2>健康服务</h2>
-    <div class="healthy_service_able">
-        <DetailCard v-for="(item,index) in detailCards" :title="item.title" :img_url="item.img_url" :router_url="item.router_url" :key="item.title" >
-            <p v-for="(item,index) in item.able" :key="index">{{item}}</p>
-        </DetailCard>
-    </div>
-    <LanguageOutput :output_text='output_text'></LanguageOutput>
-  </div>
 </template>
 
 <script>
@@ -103,10 +105,17 @@ export default {
 </script>
 
 <style scoped  lang="scss">
+.screen{
+    height: 100%;
+    background-image: url(./assets/img/service/矩形.jpg);
+    background-size: cover;
+}
 #healthyHome {
 height: 100%;
+width: 1790px;
+margin: 0px auto;
 overflow: hidden;
-background-image: url(./assets/img/service/矩形.jpg);
+// background-image: url(./assets/img/service/矩形.jpg);
     .healthy_home_able{
         width: 100%;
         height: 357px;
@@ -114,6 +123,7 @@ background-image: url(./assets/img/service/矩形.jpg);
         background-image: url(./assets/img/service/房子.png);
         background-position: center center;
         background-repeat: no-repeat;
+        background-size: contain;
         position: relative;
         .samll_card:nth-child(1){
             position: absolute;
@@ -168,9 +178,6 @@ background-image: url(./assets/img/service/矩形.jpg);
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        .detail_card{
-         
-        }
     }
     .languageOutput{
         margin-top: 80px;

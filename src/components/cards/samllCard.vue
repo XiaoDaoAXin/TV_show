@@ -30,6 +30,7 @@ export default {
      padding: 10px 20px;
      box-sizing: border-box;
      background-image: url(./assets/方块背景.png);
+     background-size: cover;
      width: 242px;
      height: 82px;
     font-family:PingFangSC-Regular,PingFang SC,Microsoft YaHei, WenQuanYi Micro Hei;
@@ -44,6 +45,7 @@ export default {
         background-image: url(./assets/温度.png);
         background-repeat: no-repeat;
         background-position: center center;
+         background-size: cover;
     }
     .text{
         float: left;

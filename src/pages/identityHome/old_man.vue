@@ -53,19 +53,19 @@ export default {
   },
   data() {
     return {
-        output_text: "家有萌娃：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
+        output_text: "家有老人：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
         if_show_mask:false,
         modal_title:'踢被提醒',
          modal_languageOutput_class:false,
         scene_experience_list:[
-            {text:'踢被提醒'},
-            {text:'回家提醒'},
-            {text:'儿童哄睡模式'},
-            {text:'作息提醒'},
-            {text:'婴儿啼哭监护'}
+            {text:'一键通知'},
+            {text:'危险警报'},
+            {text:'安全守护'},
+            {text:'干烧预警'},
+            {text:'老人语音求助'}
         ],
-        service_list:['体检服务','保姆服务','儿童安全指导','疫苗服务','家教服务','健康饮食建议'
-        ,'机器清洁服务','睡眠音乐内容','健康饮水指导','空气质量查询','儿童健康习惯指导','家政清洁服务','家政清洁服务'],
+        service_list:['医疗咨询服务','体检服务','耗材更换服务','机器清洁服务','空气质量查询','家政清洁服务'
+        ,'按摩护理服务','老人旅游服务','看护服务','健康饮食建议','生活护理指导','老年人社区','睡眠音乐内容','新闻相声内容','养生内容'],
         AI_list:[
             {
                 img:require('./assets/imges/美的智慧云.png'),
@@ -75,12 +75,12 @@ export default {
             {
                 img:require('./assets/imges/AI智能.png'),
                 title:'AI智能',
-                dec:'个性饮食饮水建议 食材保鲜提醒 运动建议 个性微气候调节 踢被识别 安全提醒'
+                dec:'个性饮食饮水建议 食材到期提醒 运动建议 摔倒识别 个性习惯提'
             },
             {
                 img:require('./assets/imges/大数据.png'),
                 title:'大数据',
-                dec:'用户行为记录 日常体征数据 运动轨迹 流感数据 气候数据'
+                dec:'用户行为记录 日常体征数据 运动轨迹'
             }
         ],
         modal_product_list:[
@@ -182,7 +182,7 @@ export default {
                 margin-left: 48px;
                 width: 850px;
                 height: 725px;
-                background-image: url(./assets/imges/cute_baby/家有萌娃.png);
+                background-image: url(./assets/imges/old_man/家有老人.png);
                 background-repeat: no-repeat;
                 background-position:center center;
                 background-size: contain;

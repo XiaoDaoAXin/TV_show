@@ -35,6 +35,7 @@ export default {
      box-sizing: border-box;
     background-position: center center;
     background-repeat: no-repeat;
+     background-size: contain;
      background-image: url(./assets/边框.png);
      h3{
          font-size:24px;
@@ -53,6 +54,7 @@ export default {
             background-position: center center;
             background-repeat: no-repeat;
             background-image: url(./assets/水.png);
+             background-size: contain;
             vertical-align: bottom;
             float: left;
         }

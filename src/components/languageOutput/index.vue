@@ -24,7 +24,7 @@ export default {
   .languageOutput {
     margin: 0 auto;
     // margin-top: 247px;
-    width: 1612px;
+    width: 1710px;
     height: 132px;
     .img {
       float: left;
@@ -33,18 +33,19 @@ export default {
       background-image: url(./assets/对话头像.png);
       background-position: center center;
       background-repeat: no-repeat;
+      background-size: cover;
     }
     .output_text {
       float: left;
-      width: 1463px;
-      height: 105px;
+      width: 1520px;
+      height: 110px;
       background-image: url(./assets/对话框.png);
       background-position: center center;
       background-repeat: no-repeat;
+      background-size: cover;
       margin-top: 12px;
       margin-left: 10px;
       font-size: 42px;
-      font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
       line-height: 105px;

@@ -1,21 +1,23 @@
 <!--  -->
 <template>
-  <div class='identity_home'>
-      <Header :title="title"></Header>
-      <div class="body">
-          <h2>一屋一世界 千家万缤纷</h2>
-          <div class="oval_system">
-              <div class="Cute_baby" @click="go_to_cuteBaby()"></div>
-              <div class="old_man"></div>
-              <div class="Suitors"></div>
-              <div class="Geeks"></div>
-              <div class="Fitness"></div>
-              <div class="game_player"></div>
-              <div class="single_person"></div>
-          </div>
-      </div>
-      <LanguageOutput :output_text='output_text'></LanguageOutput>
-  </div>
+    <div class="screen">
+        <div class='identity_home'>
+            <Header :title="title"></Header>
+            <div class="body">
+                <h2>一屋一世界 千家万缤纷</h2>
+                <div class="oval_system">
+                    <div class="Cute_baby" @click="go_to_cuteBaby()"></div>
+                    <div class="old_man" @click="go_to_oldman()"></div>
+                    <div class="Suitors"></div>
+                    <div class="Geeks"></div>
+                    <div class="Fitness"></div>
+                    <div class="game_player"></div>
+                    <div class="single_person"></div>
+                </div>
+            </div>
+            <LanguageOutput :output_text='output_text'></LanguageOutput>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -42,6 +44,11 @@ export default {
           this.$router.push({
               path:'cutebaby'
           })
+      },
+      go_to_oldman(){
+          this.$router.push({
+              path:'oldman'
+          })
       }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -51,10 +58,16 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+    .screen{
+        height: 100%;
+       background-image: url(./assets/imges/背景.jpg);
+        background-size: cover;
+    }
     .identity_home{
         height: 100%;
+        width: 1790px;
+        margin: 0px auto;
         overflow: hidden;
-        background-image: url(./assets/imges/背景.jpg);
         .body{
             margin-top: 23px;
             padding-bottom: 282px;
@@ -80,6 +93,7 @@ export default {
                     background-image: url(./assets/imges/家有萌娃.png);
                     background-position: center center;
                     background-repeat: no-repeat;
+                    background-size: cover;
                     position: absolute;
                     left: 50%;
                     bottom: 0px;
@@ -92,6 +106,7 @@ export default {
                     background-image: url(./assets/imges/家有老人.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     left: 105px;
                     bottom: -197px;
@@ -103,6 +118,7 @@ export default {
                     background-image: url(./assets/imges/品质追求者.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     left: -32px;
                     top: -18px;
@@ -114,6 +130,7 @@ export default {
                     background-image: url(./assets/imges/智能极客.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     left: 510px;
                     top: -74px;
@@ -134,6 +151,7 @@ export default {
                     background-image: url(./assets/imges/游戏玩家.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     right: -32px;
                     top: -18px;
@@ -144,12 +162,21 @@ export default {
                     background-image: url(./assets/imges/单身人士.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     right: 105px;
                     bottom: -197px;
                     z-index: 10;                   
                 }
             }
+        }
+        >>>.languageOutput{
+            margin-top: 20px;
+            width: 1710px;
+            .output_text{
+                width: 1520px;
+            }
+        
         }
     }
 </style>
