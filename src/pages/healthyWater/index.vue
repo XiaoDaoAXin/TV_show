@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-    <div class="screen">
+    <div class="screen" >
         <div class='healthyWater'>
             <Header :title="title"></Header>
             <div class="body">

@@ -2,7 +2,8 @@
 <template>
   <div class='product_card' :style="{backgroundImage:'url('+img_url+')'}">
       <div class="product_img" v-if="product_img" :style="{backgroundImage:'url('+product_img+')'}"></div>
-      <div class="text">{{name}}</div>
+      <div class="text" v-if="name">{{name}}</div>
+      <slot></slot>
   </div>
 </template>
 
@@ -29,11 +30,12 @@ export default {
         background-size: contain;
         overflow: hidden;
         .product_img{
-            width: 100%;
+            // width: 70%;
+            // margin: 0px auto;
             height: 250px;
             background-position: center center;
             background-repeat: no-repeat;
-            //  background-size: cover;
+            //  background-size: contain;
         }
         .text{
             font-size:16px;

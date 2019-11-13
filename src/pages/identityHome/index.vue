@@ -12,7 +12,7 @@
                     <div class="Geeks"></div>
                     <div class="Fitness"></div>
                     <div class="game_player"></div>
-                    <div class="single_person"></div>
+                    <div class="single_person" @click="go_to_singlePerson()"></div>
                 </div>
             </div>
             <LanguageOutput :output_text='output_text'></LanguageOutput>
@@ -48,6 +48,11 @@ export default {
       go_to_oldman(){
           this.$router.push({
               path:'oldman'
+          })
+      },
+      go_to_singlePerson(){
+            this.$router.push({
+              path:'singlePerson'
           })
       }
   },
@@ -141,6 +146,7 @@ export default {
                     background-image: url(./assets/imges/健身爱好者.png);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    background-size: cover;
                     position: absolute;
                     right: 510px;
                     top: -74px;

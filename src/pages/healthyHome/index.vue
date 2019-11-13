@@ -1,5 +1,5 @@
 <template>
-    <div class="screen">
+    <div class="screen" >
         <div id="healthyHome">
             <Header :title="title"></Header>
             <div class="healthy_home_able">

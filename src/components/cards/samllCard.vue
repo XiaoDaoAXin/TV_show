@@ -45,12 +45,12 @@ export default {
         background-image: url(./assets/温度.png);
         background-repeat: no-repeat;
         background-position: center center;
-         background-size: cover;
+        //  background-size: cover;
     }
     .text{
         float: left;
         margin-left: 20px;
-        width: 120px;
+        // width: 120px;
         height: 80px;
     }
  }

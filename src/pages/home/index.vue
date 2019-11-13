@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class="languageOutput">
+      <div class="languageOutput" @click="play_welcome_audio(sences)">
         <div class="img"></div>
         <div class="output_text">{{output_text}}</div>
       </div>
@@ -26,6 +26,7 @@
 export default {
   data() {
     return {
+      sences:'首页',
       tabbar: [
         {
           name: "safeHome",
@@ -52,6 +53,12 @@ export default {
       this.$router.push({
         path: url
       });
+    },
+    //播放欢迎语音
+    play_welcome_audio(sences){
+        let str=sences
+        console.log(str)
+        this.playAudio(str)
     }
   }
 };
