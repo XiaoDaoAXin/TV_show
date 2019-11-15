@@ -3,7 +3,7 @@
         <div class="safe_home">
             <Header :title="title"></Header>
             <div class="body">
-                <div class="tabbar" @click="go_btn(item.btn_text)" v-for="(item,index) in features_sort" :key="index" :style="{backgroundImage:'url('+item.bk_img+')'}">
+                <div class="tabbar" @click="go_scene(item.btn_text)" v-for="(item,index) in features_sort" :key="index" :style="{backgroundImage:'url('+item.bk_img+')'}">
                     <div class="dec_list">
                         <SmallCard v-for="(item,index) in item.dec_list" :title="item.title"  :img_url="item.img_url" :key="index"></SmallCard>
                     </div>
@@ -211,11 +211,28 @@ export default {
             this.playAudio()
         },
         //路由跳转
-        go_btn(features_sort){
-            if(features_sort=='人生安全')
-            this.$router.push({
-                path:'personalSafety'
-            })
+        go_scene(features_sort){
+            if(features_sort=='人生安全'){
+                this.$router.push({
+                    path:'personalSafety'
+                })
+            }
+            if(features_sort=='财务安全'){
+                this.$router.push({
+                    path:'wealthSafety'
+                })
+            }
+            if(features_sort=='环境安全'){
+                this.$router.push({
+                    path:'environmentSafety'
+                })
+            }
+            if(features_sort=='隐私安全'){
+                this.$router.push({
+                    path:'privacySecurity'
+                })
+            }
+
         }
   }
 };

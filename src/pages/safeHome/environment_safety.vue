@@ -1,7 +1,7 @@
-<!-- 人生安全页面 -->
+<!-- 环境安全页面 -->
 <template>
   <div class="screen">
-    <div class='personal_safety'>
+    <div class='environment_safety'>
       <Header :title="title"></Header>
       <div class="body">
         <div class="scene_experience_tabbar">
@@ -101,168 +101,155 @@ export default {
   },
   data() {
     return {
-      title: "人身安全",
-      output_text: "人身安全：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
+      title: "环境安全",
+      output_text: "健康空气：xxxxxxxxxxxxxxx是xxxxxxxxxxxxxxxx",
       //场景模拟按钮
       scene_btn_list: [
-        "一键报警",
-        "火灾烟雾报警",
-        "智能门锁安防抓拍",
-        "生理指标异常报警",
-        "老人跌倒报警"
+        "浸水漏水报警",
+        "智能晾晒播报",
+        "风雨联动关窗",
+        "风雨联动关门"
       ],
       product_list: [
         {
-          name: "智能穿戴设备",
-          p1: "智能",
-          p2: "穿戴设备",
-          img_url: require("./assets/imges/personal_safety/智能穿戴设备.png")
+        //   name: "智能门锁",
+          p1: "水浸传感器",
+        //   p2: "智能门锁",
+          img_url: require("./assets/imges/environment_safety/水浸传感器.png")
         },
         {
           name: "智能摄像头",
-          p1: "智能",
-          p2: "摄像头",
-          img_url: require("./assets/imges/personal_safety/智能摄像头.png")
+          p1: "自动推门器",
+          //   p2: "摄像头",
+          img_url: require("./assets/imges/environment_safety/自动推门器.png")
         },
         {
           name: "空气净化器",
-          p1: "空气",
-          p2: "净化器",
-          img_url: require("./assets/imges/personal_safety/空气净化器.png")
+          p1: "自动关窗器",
+          //   p2: "净化器",
+          img_url: require("./assets/imges/environment_safety/自动关窗器.png")
         },
         {
           name: "一键报警器",
-          p1: "一键",
-          p2: "报警器",
-          img_url: require("./assets/imges/personal_safety/一键报警器.png")
-        },
-        {
-          name: "可燃气体探测器",
-          p1: "可燃气体",
-          p2: "探测器",
-          img_url: require("./assets/imges/personal_safety/可燃气体探测器.png")
-        },
-        {
-          name: "火灾烟感探测器",
-          p1: "火灾烟感",
-          p2: "探测器",
-          img_url: require("./assets/imges/personal_safety/火灾烟感探测器.png")
+          p1: "智能晾衣架",
+          //   p2: "报警器",
+          img_url: require("./assets/imges/environment_safety/智能晾衣架.png")
         },
         {
           name: "有毒气体检测器",
-          p1: "有毒气体",
-          p2: "检测器",
-          img_url: require("./assets/imges/personal_safety/有毒气体检测器.png")
+          p1: "智能洗衣机",
+        //   p2: "感应器",
+          img_url: require("./assets/imges/environment_safety/智能洗衣机.png")
+        },
+        {
+          name: "有毒气体检测器",
+          p1: "小美音箱",
+          //   p2: "检测器",
+          img_url: require("./assets/imges/environment_safety/小美音箱.png")
         },
         {
           name: "门窗探测器",
-          p1: "门窗",
-          p2: "探测器",
-          img_url: require("./assets/imges/personal_safety/门窗探测器.png")
+          p1: "空气净化器",
+          p2: "柜开关",
+          img_url: require("./assets/imges/environment_safety/空气净化器.png")
         },
         {
           name: "小美音箱",
-          p1: "小美音箱",
+          p1: "智能冰箱",
           // p2:'摄像头',
-          img_url: require("./assets/imges/personal_safety/小美音箱.png")
-        },
-        {
-          name: "智能猫眼",
-          p1: "智能猫眼",
-          // p2:'摄像头',
-          img_url: require("./assets/imges/personal_safety/智能猫眼.png")
+          img_url: require("./assets/imges/environment_safety/智能冰箱.png")
         }
       ],
       params_liset: [
         {
-          title: "陌生人识别",
+          title: "浸水漏水监测",
           // params:'1.5L水',
-          img_url: require("./assets/imges/personal_safety/陌生人识别.png")
+          img_url: require("./assets/imges/environment_safety/浸水漏水监测.png")
         },
         {
-          title: "有毒气体",
-          params: "监测",
-          img_url: require("./assets/imges/personal_safety/有毒气体监测.png")
+          title: "社区卫生安",
+          params: "保联动",
+          img_url: require("./assets/imges/environment_safety/社区卫生安保联动.png")
         },
         {
-          title: "摄像头",
-          params: "安防监控",
-          img_url: require("./assets/imges/personal_safety/摄像头安防监控.png")
+          title: "自动关窗",
+          //   params: "安防监控",
+          img_url: require("./assets/imges/environment_safety/自动关窗.png")
         },
         {
-          title: "老人",
-          params: "跌倒识别",
-          img_url: require("./assets/imges/personal_safety/老人跌倒识别.png")
+          title: "自然气象灾",
+          params: "害感知",
+          img_url: require("./assets/imges/environment_safety/自然气象灾害感知.png")
         },
         {
-          title: "生理指标",
-          params: "监测",
-          img_url: require("./assets/imges/personal_safety/生理指标监测.png")
+          title: "阳台风雨探测",
+          //   params: "监测",
+          img_url: require("./assets/imges/environment_safety/阳台风雨探测.png")
         },
         {
-          title: "儿童危险",
-          params: "行为预警",
-          img_url: require("./assets/imges/personal_safety/儿童危险行为预警.png")
+          title: "智能晾晒提醒",
+          //   params: "行为预警",
+          img_url: require("./assets/imges/environment_safety/智能晾晒提醒.png")
         },
         {
-          title: "火灾",
-          params: "烟雾监测",
-          img_url: require("./assets/imges/personal_safety/火灾烟雾监测.png")
+          title: "自动关门",
+          //   params: "监测",
+          img_url: require("./assets/imges/environment_safety/自动关门.png")
         },
         {
-          title: "可燃气体",
-          params: "监测",
-          img_url: require("./assets/imges/personal_safety/可燃气体监测.png")
+          title: "食材购买建议",
+          //   params: "行为预警",
+          img_url: require("./assets/imges/environment_safety/食材购买建议.png")
         }
       ],
       service_liset: [
         {
-          title: "空气质量查询",
-          img_url: require("./assets/imges/personal_safety/空气质量查询.png")
+          title: "自然灾害预警",
+          img_url: require("./assets/imges/environment_safety/1.png")
+        },
+        {
+          title: "天气查询服务",
+          img_url: require("./assets/imges/environment_safety/2.png")
+        },
+        {
+          title: "家政清洁服务",
+          img_url: require("./assets/imges/environment_safety/3.png")
+        },
+        {
+          title: "社区卫生安保服务",
+          img_url: require("./assets/imges/environment_safety/4.png")
         },
         {
           title: "儿童安全指导",
-          img_url: require("./assets/imges/personal_safety/儿童安全指导.png")
-        },
-        {
-          title: "除甲醛服务",
-          img_url: require("./assets/imges/personal_safety/除甲醛服务.png")
-        },
-        {
-          title: "生活护理服务",
-          img_url: require("./assets/imges/personal_safety/生活护理服务.png")
-        },
-        {
-          title: "医疗咨询服务",
-          img_url: require("./assets/imges/personal_safety/医疗咨询服务.png")
+          img_url: require("./assets/imges/environment_safety/5.png")
         },
         {
           title: "老人安全指导",
-          img_url: require("./assets/imges/personal_safety/老人安全指导.png")
+          img_url: require("./assets/imges/environment_safety/6.png")
         },
         {
-          title: "看护服务",
-          img_url: require("./assets/imges/personal_safety/看护服务.png")
+          title: "食材购买服务",
+          img_url: require("./assets/imges/environment_safety/7.png")
         },
         {
-          title: "生理指标记录",
-          img_url: require("./assets/imges/personal_safety/生理指标记录.png")
+          title: "晾晒提醒服务",
+          img_url: require("./assets/imges/environment_safety/8.png")
         }
       ],
       AI_list: [
         {
           title: "美的智慧云",
-          able_item: ["远程控制家电", "联动多台设备", "环境调节"],
+          able_item: ["远程控制家电", "联动多台设备",'环境调节'],
           img_url: require("./assets/imges/personal_safety/美的智慧云.png")
         },
         {
           title: "AI智能",
-          able_item: ["摔倒识别", "安全提醒"],
+          able_item: ["智能晾晒建议", "食材购买提醒"],
           img_url: require("./assets/imges/personal_safety/AI智能.png")
         },
         {
           title: "大数据",
-          able_item: ["用户行为记录", "日常体征数据", "运动轨迹"],
+          able_item: ["用户行为记录","气象数据"],
           img_url: require("./assets/imges/personal_safety/大数据.png")
         }
       ]
@@ -276,10 +263,10 @@ export default {
 <style lang='scss' scoped>
 .screen {
   height: 100%;
-  background-image: url(./assets/imges/personal_safety/大背景.jpg);
+  background-image: url(./assets/imges/environment_safety/环境安全大背景.jpg);
   background-size: cover;
 }
-.personal_safety {
+.environment_safety {
   height: 100%;
   width: 1790px;
   margin: 0px auto;
@@ -296,7 +283,7 @@ export default {
     position: relative;
     .scene_experience_tabbar {
       margin: 0px auto;
-      margin-top: 5px;
+      margin-top: 15px;
       width: 1685px;
       height: 134px;
       background-image: url(./assets/imges/personal_safety/按钮背景框.png);
@@ -331,7 +318,7 @@ export default {
           color: rgba(255, 255, 255, 1);
           line-height: 33px;
           &:nth-child(1) {
-            width: 180px;
+            // width: 180px;
             margin: 0px;
           }
         }
@@ -340,7 +327,7 @@ export default {
     .product_list {
       position: absolute;
       width: 492px;
-      height: 662px;
+      height: 672px;
       left: 38px;
       top: 110px;
       box-sizing: border-box;
@@ -359,24 +346,24 @@ export default {
         text-align: center;
       }
       .product_box {
-        padding-left: 17px;
+        padding-left: 16px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
         >>> .product_card {
-          width: 80px;
-          height: 260px;
+          width: 100px;
+          height: 270px;
           border-radius: 10px;
-          margin-left: 9px;
+          margin-left: 11px;
           margin-bottom: 10px;
           // &:nth-child(5n+1){
           //     margin-left: 0px;
           // }
           .name {
-            width: 65px;
+            width: 80px;
             margin: 0px auto;
-            margin-top: 160px;
+            margin-top: 180px;
             text-align: center;
             font-size: 16px;
             font-weight: normal;
@@ -542,10 +529,10 @@ export default {
       }
       .AI {
         position: absolute;
-        top: 460px;
+        top: 465px;
         right: 38px;
         width: 490px;
-        height: 321px;
+        height: 322px;
         background-size: cover;
         background-image: url(./assets/imges/personal_safety/AI系统边框.png);
         background-repeat: no-repeat;
@@ -616,9 +603,9 @@ export default {
     }
   }
   >>> .languageOutput {
-        margin: 0px;
-        margin-top: 20px;
-        margin-left: 75px;
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: 75px;
   }
 }
 </style>

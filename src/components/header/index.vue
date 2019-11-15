@@ -31,7 +31,7 @@ export default {
     //  width: 1800px;
      height: 70px;
      margin: 0 auto;
-     margin-top:60px;
+     margin-top:62px;
      text-align: center;
      line-height: 70px;
      font-size:50px;

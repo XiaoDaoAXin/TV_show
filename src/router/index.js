@@ -19,7 +19,9 @@ const LifeCompanion = () => import('../pages/robotButler/life_companion')
 
 const SafeHome = () => import('../pages/safeHome')
 const PersonalSafety = () => import('../pages/safeHome/personal_safety')
-
+const WealthSafety = () => import('../pages/safeHome/wealth_safety')
+const EnvironmentSafety = () => import('../pages/safeHome/environment_safety')
+const PrivacySecurity = () => import('../pages/safeHome/privacy_security')
 
 Vue.use(Router)
 
@@ -114,7 +116,22 @@ export default new Router({
     {
       path: '/personalSafety',
       name: 'personalSafety',
-      component: PersonalSafety
+      component: PersonalSafety 
+    },
+    {
+      path: '/wealthSafety',
+      name: 'wealthSafety',
+      component: WealthSafety
+    },
+    {
+      path: '/environmentSafety',
+      name: 'environmentSafety',
+      component: EnvironmentSafety
+    },
+    {
+      path: '/privacySecurity',
+      name: 'privacySecurity',
+      component: PrivacySecurity
     }
     
   ]
